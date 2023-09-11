@@ -9,22 +9,22 @@ df = pd.read_csv('movies_metadata.csv',low_memory=False, delimiter=',')
 columns = list(df.columns)
 print(columns)
 
-#view the unique movies
+# view the unique movies
 movie_count = df['imdb_id'].nunique()
 print(movie_count)
 
-#average rating for all movies
+# average rating for all movies
 avr_rating_all = df['vote_average'].mean()
 print(avr_rating_all)
 
-#top 5 highest rated movies
+# top 5 highest rated movies
 
 top_5 = df.nlargest(5, columns=['vote_average'])
 names = top_5['original_title']
 names = names.to_string(index = False)
 print(names)
 
-#Number of movies release each year
+# Number of movies release each year
 
 # List of columns containing datetime values
 datetime_columns = ['release_date']
@@ -49,7 +49,7 @@ genres = df['genres']
 for g in genres:
     res = ast.literal_eval(g)
     multi.append(res)
-#Creating new dict to iterate over the values and count them
+# Creating new dict to iterate over the values and count them
 counts_genres={}
 for m in multi:
     for m1 in m:
@@ -60,7 +60,7 @@ for m in multi:
                 counts_genres[value] +=1
 print(counts_genres)
 
-#Save as JSON
+# Save as JSON
 
 json_df = df.to_json()
 
