@@ -60,6 +60,9 @@ for m in multi:
                 counts_genres[value] +=1
 print(counts_genres)
 
+#Save as JSON
+
+json_df = df.to_json()
 
 
 
