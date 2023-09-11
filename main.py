@@ -43,7 +43,7 @@ print(movies_by_year)
 
 # Movies by Genre
 
-# Transforming the Column in to and iterable list
+# Transforming the Column in to an iterable list
 multi = []
 genres = df['genres']
 for g in genres:
